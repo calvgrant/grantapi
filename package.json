@@ -1,0 +1,27 @@
+{
+  "name": "grantapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/calvgrant/grantapi.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/calvgrant/grantapi/issues"
+  },
+  "homepage": "https://github.com/calvgrant/grantapi#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "glob": "^10.3.10",
+    "morgan": "^1.10.0",
+    "node-fetch": "^2.6.1",
+    "path": "^0.12.7"
+  }
+}
