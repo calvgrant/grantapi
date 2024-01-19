@@ -4,7 +4,6 @@ const logger = require("morgan");
 const path = require("path");
 const app = express();
 const cors = require("cors");
-const config = require("../config");
 
 const BASE_URL = process.env.URL|| '';
 
