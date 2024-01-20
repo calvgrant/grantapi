@@ -22,7 +22,7 @@ const loadFiles = async () => {
 app.use(cookieParser())
 app.use(function (err, req, res, next) {
     console.error(err.stack)
-    res.status(404).send('Something broke!')
+    res.status(500).send('Something broke!')
 })
 
 //routers
