@@ -1,11 +1,12 @@
 const express = require("express");
 const glob = require("glob");
 const logger = require("morgan");
+const cookieParser = require("cookie-parser");
 const path = require("path");
 const app = express();
 const cors = require("cors");
 
-const BASE_URL = process.env.URL|| '';
+const BASE_URL = process.env.URL|| 'https://grantapi.cyclic.app';
 
 const loadFiles = async () => {
   let files = glob.sync("./src/routes/*.js");
@@ -18,15 +19,23 @@ const loadFiles = async () => {
 //ratelimit
 
 //middleware
+app.use(cookieParser())
+app.use(function (err, req, res, next) {
+    console.error(err.stack)
+    res.status(404).send('Something broke!')
+})
 
 //routers
 
 app.get('/', (req, res) => {
   return res.status(200).send({
-    author: {
     maintainer: 'Alvin N',
-    team: 'Jombloers'
-    },
+    team: 'Jombloers Team',
+  });
+});
+
+app.get('/api', (req, res) => {
+  return res.status(200).send({
     endpoint: {
       anime: {
       hug: `${BASE_URL}/anime/hug`,
