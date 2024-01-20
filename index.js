@@ -11,7 +11,7 @@ const loadFiles = async () => {
   let files = glob.sync("./src/routes/*.js");
   files.forEach((route) => {
     const file = require(`${path.resolve(route)}`);
-    app.use(`/${file.endpoint}`, file.router);
+    app.use(`${file.endpoint}`, file.router);
   });
 };
 
