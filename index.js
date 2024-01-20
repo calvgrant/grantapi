@@ -23,8 +23,10 @@ const loadFiles = async () => {
 
 app.get('/', (req, res) => {
   return res.status(200).send({
+    author: {
     maintainer: 'Alvin N',
-    source: 'not open yet',
+    team: 'Jombloers'
+    },
     endpoint: {
       anime: {
       hug: `${BASE_URL}/anime/hug`,
@@ -36,15 +38,7 @@ app.get('/', (req, res) => {
       gombal: `${BASE_URL}/fun/gombal , Indonesian rizz words`,
       yomama: `${BASE_URL}/fun/yomama`
       },
-    
     },
-  });
-});
-
-app.get('*', (req, res) => {
-  return res.status(404).send({
-    maintainer: 'Calvin Grant',
-    words: 'read the docs...',
   });
 });
 
