@@ -26,21 +26,32 @@ app.get('/', (req, res) => {
     maintainer: 'Alvin N',
     source: 'not open yet',
     endpoint: {
+      anime: {
       hug: `${BASE_URL}/anime/hug`,
       slap: `${BASE_URL}/anime/slap`,
-      punch: `${BASE_URL}/anime/punch`,
+      punch: `${BASE_URL}/anime/punch`
+      },
+      fun: {
       roast: `${BASE_URL}/fun/roast`,
       gombal: `${BASE_URL}/fun/gombal , Indonesian rizz words`,
-      yomama: `${BASE_URL}/fun/yomama`,
-      
+      yomama: `${BASE_URL}/fun/yomama`
+      },
+    
     },
   });
 });
 
-app.get('/v1', (req, res) => {
+app.get('*', (req, res) => {
+  return res.status(404).send({
+    maintainer: 'Calvin Grant',
+    words: 'read the docs...',
+  });
+});
+
+app.get('/grant', (req, res) => {
   return res.status(200).send({
-    maintainer: 'Alvin Nobel',
-    source: 'https://github.com/ZarcDev21',
+    maintainer: 'Calvin Grant',
+    source: 'https://github.com/calvgrant',
   });
 });
 
