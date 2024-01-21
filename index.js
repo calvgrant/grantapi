@@ -26,9 +26,9 @@ app.use(function (err, req, res, next) {
 })
 
 //base
-const jokereceh = require("./router/index.js");
+const jokereceh = require("./src/router/index.js");
 //routers
-app.use("/v1/joke", jokereceh);
+app.use("/jokereceh", jokereceh);
 
 app.get('/', (req, res) => {
   return res.status(200).send({
