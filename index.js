@@ -8,14 +8,6 @@ const cors = require("cors");
 
 const BASE_URL = process.env.URL|| 'https://grantapi.cyclic.app';
 
-const loadFiles = async () => {
-  let files = glob.sync("./src/routes/*.js");
-  files.forEach((route) => {
-    const file = require(`${path.resolve(route)}`);
-    app.use(`${file.endpoint}`, file.router);
-  });
-};
-
 //ratelimit
 
 //middleware
@@ -27,8 +19,12 @@ app.use(function (err, req, res, next) {
 
 //base
 const jokereceh = require("./src/router/index.js");
+const papkitsu = require("./src/router/index.js")
+const gombal = require("./src/router/index.js")
 //routers
-app.use("/jokereceh", jokereceh);
+app.use("/fun", jokereceh);
+app.use("/fun", papkitsu);
+app.use("/fun", gombal);
 
 app.get('/', (req, res) => {
   return res.status(200).send({
