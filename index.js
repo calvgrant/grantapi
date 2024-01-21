@@ -25,7 +25,10 @@ app.use(function (err, req, res, next) {
     res.status(500).send('Something broke!')
 })
 
+//base
+const jokereceh = require("./router/index.js");
 //routers
+app.use("/v1/joke", jokereceh);
 
 app.get('/', (req, res) => {
   return res.status(200).send({
