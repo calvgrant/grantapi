@@ -20,13 +20,9 @@ app.use(function (err, req, res, next) {
 })
 
 //base
-const jokereceh = require("./src/router/index.js");
-const papkitsu = require("./src/router/index.js")
-const gombal = require("./src/router/index.js")
+const funRoutes = require("./src/router/index.js");
 //routers
-app.use("/fun", jokereceh);
-app.use("/fun", papkitsu);
-app.use("/fun", gombal);
+app.use("/fun", funRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).json({
