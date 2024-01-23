@@ -1,5 +1,15 @@
-const text = require("../assets/json/jokereceh.json");
+const text = require("../assets/jokereceh.json");
 const getRandom = require("../utils/getRandom");
+
+module.exports.getAllJokereceh = (req, res) => {
+  res.status(200).json({
+    status: 200,
+    total: text.length,
+    end_point: req.originalUrl,
+    method: req.method,
+    data: text,
+  });
+};
 
 module.exports.randomTextJoke = (req, res) => {
   const count = parseInt(req.query.count);

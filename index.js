@@ -9,6 +9,8 @@ const cors = require("cors");
 const BASE_URL = process.env.URL|| 'https://grantapi.cyclic.app';
 
 //ratelimit
+app.use(cors());
+app.set("json spaces", 2);
 
 //middleware
 app.use(cookieParser())
@@ -33,19 +35,21 @@ app.get('/', (req, res) => {
   });
 });
 
-app.get('/api', (req, res) => {
-  return res.status(200).send({
-    endpoint: {
-      anime: {
-      hug: `${BASE_URL}/anime/hug`,
-      slap: `${BASE_URL}/anime/slap`,
-      punch: `${BASE_URL}/anime/punch`
-      },
-      fun: {
-      roast: `${BASE_URL}/fun/roast`,
-      gombal: `${BASE_URL}/fun/gombal , Indonesian rizz words`,
-      yomama: `${BASE_URL}/fun/yomama`
-      },
+app.get("/", (req, res) => {
+  res.status(200).json({
+    api_name: "grantapi",
+    author: "calvgrant",
+    description:
+      "Grant Api adalah api yang berisikan tentang hal random dari sebuha gambar anime sebuah joke gajelas dan hal lainnya yang ga berguna.",
+    version: "v1.0.0",
+    end_points: {
+      "/fun/jokereceh": "Mendapatkan semua data candaan berupa teks",
+      "/fun/gombal": "Mendapatkan satu data candaan berupa teks secara random",
+    },
+    repository: "https://github.com/calvgrant/grantapi",
+    email: "alvintungga17@gmail.com",
+    social: {
+      github: "https://github.com/calvgrant",
     },
   });
 });
