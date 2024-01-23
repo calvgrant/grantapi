@@ -1,4 +1,4 @@
-const text = require("../assets/jokereceh.json");
+const text = require("../assets/json/jokereceh.json");
 const getRandom = require("../utils/getRandom");
 
 module.exports.getAllJokereceh = (req, res) => {
