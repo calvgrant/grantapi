@@ -28,13 +28,6 @@ app.use("/fun", jokereceh);
 app.use("/fun", papkitsu);
 app.use("/fun", gombal);
 
-app.get('/', (req, res) => {
-  return res.status(200).send({
-    maintainer: 'Alvin N',
-    team: 'Jombloers Team',
-  });
-});
-
 app.get("/", (req, res) => {
   res.status(200).json({
     api_name: "grantapi",
