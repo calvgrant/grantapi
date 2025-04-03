@@ -6,7 +6,7 @@ const path = require("path");
 const app = express();
 const cors = require("cors");
 
-const BASE_URL = process.env.URL|| 'https://grantapi.cyclic.app';
+const BASE_URL = process.env.URL|| 'https://twaryapi.vercel.app';
 
 //ratelimit
 app.use(cors());
@@ -26,17 +26,17 @@ app.use("/fun", funRoutes);
 
 app.get("/", (req, res) => {
   res.status(200).json({
-    api_name: "grantapi",
-    author: "calvgrant",
+    api_name: "TwaryAPI",
+    author: "Kalrex",
     description:
-      "Grant Api adalah api yang berisikan tentang hal random dari sebuha gambar anime sebuah joke gajelas dan hal lainnya yang ga berguna.",
+      "Twary Api adalah api yang berisikan tentang hal random dari sebuha gambar anime sebuah joke gajelas dan hal lainnya yang ga berguna.",
     version: "v1.0.0",
     end_points: {
       "/fun/jokereceh": "Mendapatkan semua data candaan berupa teks",
       "/fun/gombal": "Mendapatkan satu data candaan berupa teks secara random",
     },
-    repository: "https://github.com/calvgrant/grantapi",
-    email: "alvintungga17@gmail.com",
+    repository: "https://github.com/calvgrant/TwaryAPI",
+    email: "zarconxorp@gmail.com",
     social: {
       github: "https://github.com/calvgrant",
     },
@@ -45,7 +45,7 @@ app.get("/", (req, res) => {
 
 app.get('/grant', (req, res) => {
   return res.status(200).send({
-    maintainer: 'Calvin Grant',
+    maintainer: 'Kalrex.',
     source: 'https://github.com/calvgrant',
   });
 });
